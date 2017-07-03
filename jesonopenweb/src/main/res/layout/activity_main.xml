@@ -40,20 +40,19 @@
                 android:id="@+id/shangyiye"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
                 android:layout_marginStart="35dp"
-                android:text="上一页" />
+                android:text="上一页"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
 
             <Button
                 android:id="@+id/xiayiyebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
                 android:layout_marginEnd="35dp"
-                android:text="下一页" />
+                android:text="下一页"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true" />
 
             <TextView
                 android:id="@+id/textView_allpage"

@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                     allpagetext.setText(nowpage+" / "+pages);
                     break;
                 default:
-                    //do something
                     break;
             }
         }
@@ -81,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("读文章");
         }
         xiabut = (Button) findViewById(R.id.xiayiyebutton);
         if(savedInstanceState!=null){
@@ -144,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("imgurl",imgurl);
                 intent.putExtra("openid",openid);
                 intent.putExtra("title",title);
-
                 startActivity(intent);
             }
         });
@@ -188,8 +187,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void sendOkhttp(final String url) {
-        //createProgressBar();
-        //showprogress();
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -207,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }).start();
-        //noProgress();
+
     }
 
     private void parseJSON(String jsonData) {
@@ -216,7 +214,6 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 int id = jsonObject.getInt("id");
-                //String createTime = jsonObject.getString("createTime");
                 String imgUrl = jsonObject.getString("imgUrl");
                 if (imgUrl.equals("/upload/1469499981628.jpg"))
                     continue;
@@ -228,11 +225,9 @@ public class MainActivity extends AppCompatActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            //progressBar.setVisibility(View.GONE);
-            //noProgress();
+
         }
-        //progressBar.setVisibility(View.GONE);
-        //noProgress();
+
     }
 
     public Bitmap getInternetPicture(String UrlPath) {
@@ -243,7 +238,6 @@ public class MainActivity extends AppCompatActivity {
         // 2、获取Uri
         try {
             URL uri = new URL(urlpath);
-
             // 3、获取连接对象、此时还没有建立连接
             HttpURLConnection connection = (HttpURLConnection) uri.openConnection();
             // 4、初始化连接对象
